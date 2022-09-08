@@ -1,0 +1,160 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html{
+	background-color: black;
+	font-family: 'Jost';
+	color: #FFFFFF;
+	height: 100%;
+	width: 100%
+}
+body{
+	height: 100%;
+	width: 100%;
+	font-family: 'Jost';
+	color: #FFFFFF;
+	background-color: black !important;
+	overflow-x: hidden
+}
+
+.texto-sitio{
+	font-size: 25px;
+	font-family: 'Jost';
+	color:#fff
+}
+
+/*-- NOMBRE --*/
+.nombre{
+	font-size: 150px;
+	font-family: 'Jost'
+}
+.info{
+	font-size: 38px;
+	color: #DADADA;
+	font-family: 'Jost'
+}
+#home.container{
+	text-align:center;
+}
+@keyframes wobble {
+  0% {
+    transform: skew(-6deg);
+  }
+  1% {
+    transform: skew(5deg);
+  }
+  2% {
+    transform: skew(-3deg);
+  }
+  3% {
+    transform: skew(2deg);
+  }
+  4% {
+    transform: skew(-1deg);
+  }
+  5%,
+  100% {
+    transform: skew(0);
+  }
+}
+
+@keyframes offset {
+  0% {
+    transform: translate(-5px, 5px);
+  }
+  5%,
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes offsetx {
+  0% {
+    transform: translate(5px, -5px);
+  }
+  5%,
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+[data-glitch] {
+  position: relative;
+  font-weight: 800;
+  display: inline-block;
+  vertical-align: middle;
+  animation: wobble ease-in-out 6s infinite .2s;
+}
+
+@supports (mix-blend-mode: screen) {
+  [data-glitch] {
+    color: #1A89D8;
+    mix-blend-mode: screen;
+  }
+  [data-glitch]:before,
+  [data-glitch]:after {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: attr(data-glitch);
+    mix-blend-mode: screen;
+    transition: transform .1s;
+  }
+  [data-glitch]:before {
+    color: #D52280;
+    animation: offset linear 3s infinite alternate;
+  }
+  [data-glitch]:after {
+    color: #2DC6BE;
+    animation: offsetx linear 3s infinite alternate;
+  }
+}
+
+/*-- ANIMACIÓN SECCIONES --*/
+#trabajo,#about,#contacto,#tienda,#home{
+	height: 500px;
+	text-align: center;
+	padding-top: 60px
+}
+#home{
+	margin-bottom: 7.5%
+}
+.titulos{
+	color: #fff;
+	font-size: 80px;
+	font-family: 'Jost'
+}
+
+/*-- HOVER PORTAFOLIO --*/
+.img-portafolio{
+	height: 100%;
+	width: 100%;
+	position: relative
+}
+.img-portafolio:hover{
+	height: 100%;
+	width: 100%;
+	filter: opacity(0.3);
+	transition: all .3s ease-in-out;
+}
+
+.text-portafolio{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+	opacity: 1;
+}
+
+/*-- POSICIONES IMG LOWPOLY --*/
+.lowpoly{font-family: 'Jost';
+	color: #fff;
+	height: 350px;
+	width: 100%;
+	position: relative}
